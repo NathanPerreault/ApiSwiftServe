@@ -13,7 +13,7 @@ export const Commande = sequelize.define('Commande', {
         allowNull: false
     },
     statut: {
-        type: DataTypes.ENUM('Commencer', 'En preparation','Desseprêterts'),
+        type: DataTypes.ENUM('sur Place', 'Livraison'),
         allowNull: false
     },
     prixTotal: {
@@ -25,12 +25,11 @@ export const Commande = sequelize.define('Commande', {
         allowNull: true,
         references: {
             model: Client,
-            key: 'idclient', 
+            key: 'idclient',
         },
     },
   }, {
-    timestamps: false, 
+    timestamps: false,
   });
   
   export default Commande;
-  
