@@ -13,7 +13,7 @@ export const Commande = sequelize.define('Commande', {
         allowNull: false
     },
     cycle: {
-        type: DataTypes.ENUM('Commencer', 'En preparation','Desseprêterts'),
+        type: DataTypes.ENUM('Commencer', 'En preparation','Pret'),
         allowNull: false
     },
     statut: {
