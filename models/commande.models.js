@@ -12,6 +12,10 @@ export const Commande = sequelize.define('Commande', {
         type: DataTypes.DATE,
         allowNull: false
     },
+    cycle: {
+        type: DataTypes.ENUM('Commencer', 'En preparation','Desseprêterts'),
+        allowNull: false
+    },
     statut: {
         type: DataTypes.ENUM('sur Place', 'Livraison'),
         allowNull: false
@@ -25,11 +29,12 @@ export const Commande = sequelize.define('Commande', {
         allowNull: true,
         references: {
             model: Client,
-            key: 'idclient',
+            key: 'idclient', 
         },
     },
   }, {
-    timestamps: false,
+    timestamps: false, 
   });
   
   export default Commande;
+  
