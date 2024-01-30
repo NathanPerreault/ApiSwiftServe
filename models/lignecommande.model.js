@@ -31,6 +31,10 @@ export const LigneCommande = sequelize.define('LigneCommande', {
         type: DataTypes.DOUBLE,
         allowNull: false
     },
+    quantite: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
    
    
   }, {
