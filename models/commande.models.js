@@ -10,7 +10,14 @@ export const Commande = sequelize.define('Commande', {
     },
     date: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
+        get() {
+            const dateCommande = this.getDataValue('date');
+           
+            const dateCommandeAnneeMinute = `${dateCommande.getDate()}/${dateCommande.getMonth() + 1}/${dateCommande.getFullYear()} ${dateCommande.getHours()}:${dateCommande.getMinutes()}`;
+            return dateCommandeAnneeMinute;
+        },
+
     },
     cycle: {
         type: DataTypes.ENUM('Commencer', 'En preparation','Pret'),

@@ -11,7 +11,13 @@ export const Livraison = sequelize.define('Livraison', {
     },
     date: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
+        get() {
+            const dateLivraison = this.getDataValue('date');
+           
+            const dateLivraisonAnneeMinute = `${dateLivraison.getDate()}/${dateLivraison.getMonth() + 1}/${dateLivraison.getFullYear()} ${dateLivraison.getHours()}:${dateLivraison.getMinutes()}`;
+            return dateLivraisonAnneeMinute;
+        },
     },
     commande: {
         type: DataTypes.INTEGER,

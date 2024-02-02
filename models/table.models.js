@@ -17,6 +17,10 @@ export const Table = sequelize.define('Table', {
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    disponibilites: {
+        type: DataTypes.ENUM('Disponible', 'Non Disponible'),
+        allowNull: false
+    },
     
    
   }, {

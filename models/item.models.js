@@ -27,11 +27,11 @@ export const Item = sequelize.define('Item', {
         allowNull: false
     },
     categorie: {
-        type: DataTypes.ENUM('Entrées', 'Plats','Desserts', 'Boissons'),
+        type: DataTypes.ENUM('Entrées', 'Plats','Desserts', 'Boissons','Sauces', 'Extras'),
         allowNull: false
     },
     disponibilite: {
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.ENUM('Disponible', 'Non Disponible'),
         allowNull: false
     },
    
